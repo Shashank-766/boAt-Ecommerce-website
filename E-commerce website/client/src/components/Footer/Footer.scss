@@ -1,0 +1,127 @@
+@import "../../css-config/mixins.scss";
+
+.footer {
+    width: 100%;
+    background-image: linear-gradient(to right, #c31432, #240b36);
+
+    .footer-content {
+        padding: 10px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+
+        flex-flow: wrap;
+        gap: 5px;
+        justify-content: space-around;
+
+        font-family: 'dancing script';
+
+        @include md {
+            justify-content: space-around;
+            padding: 15px 0;
+            padding-bottom: 20px;
+        }
+
+        .col {
+            max-width: 300px;
+
+            .title {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 10px;
+                font-size: 20px;
+                font-weight: 600;
+                font-family: 'lobster';
+
+                @include md {
+                    font-size: 30px;
+                    margin-bottom: 15px;
+                }
+            }
+
+            .text {
+                color: rgba($color: #ffffff, $alpha: 0.7);
+                font-size: 14px;
+
+                @include md {
+                    font-size: 22px;
+                    font-weight: 600;
+                }
+            }
+
+            .c-items {
+                display: flex;
+                margin-bottom: 8px;
+
+                svg {
+                    flex-shrink: 0;
+                    font: 14px;
+                    margin-right: 10px;
+                    margin-top: 4px;
+                    color: rgba($color: #ffffff, $alpha: 0.7);
+
+                    @include md {
+                        font-size: 22px;
+                    }
+                }
+            }
+
+            span {
+                &.text {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    margin-bottom: 5px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .bottom-bar {
+
+        border-top: 2px solid rgba($color: #ffffff, $alpha: 0.4);
+
+        .bottom-bar-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2px 20px;
+            text-align: center;
+
+            @include md {
+                flex-direction: row;
+                padding: 0 10px;
+                height: 40px;
+                max-width: 1200px;
+                margin: 0 auto;
+                justify-content: space-between;
+
+
+            }
+
+            .text {
+                font-size: 12px;
+                color: rgba($color: #ffffff, $alpha: 0.5);
+
+                @include md {
+                    font-size: 16px;
+                }
+            }
+
+            img {
+                padding-bottom: 2px;
+                width: 80%;
+
+                @include md {
+                    width: calc(42vw - 40px);
+                    height: 100%;
+                }
+            }
+
+        }
+    }
+}

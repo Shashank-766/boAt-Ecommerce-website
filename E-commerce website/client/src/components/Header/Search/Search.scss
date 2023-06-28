@@ -1,0 +1,121 @@
+@import "../../../css-config/mixins.scss";
+.search-model{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    background-color:rgb(250, 237, 246);
+    transform: translateY(100%);
+    animation: slideSearchWindow 0.6s ease forwards;
+    .form-field{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 10px 50px;
+        border-bottom: 1px solid rgba($color: #000000, $alpha: 0.1);
+        position: relative;
+        @include md{
+            padding: 20px 0;
+
+        }
+        input{
+            font-family: 'lobster';
+            width: 100%;
+            max-width: 1000px;
+            height: 50px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            color: #212121;
+            outline: none;
+            border: none;
+            text-transform: uppercase;
+            border-radius: 50px;
+            @include md{
+                font-size: 48px;
+                height: 80px;
+            }
+
+
+        }
+        .close-btn{
+            position: absolute;
+            font-size: 25px;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            @include md{
+                right: 40px;
+                font-size: 50px;
+            }
+        }
+    }
+    .search-result-content{
+        max-width: calc(100% - 20px);
+        margin: 0 auto;
+        @include md{max-width: 800px;}
+        .search-results{
+            height: calc(100vh - 110px);
+            overflow: auto;
+            margin: 20px 0;
+            @include md{
+                height: calc(100vh - 160px);
+            }
+            .search-result-item{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                padding: 10px 0;
+                border-bottom: 1px solid rgba($color: #000000, $alpha: 0.1);
+                cursor: pointer;
+                .img-container{
+                    background-color: rgba($color: #000000, $alpha: 0.2);
+                    width: 60px;
+                    height: 60px;
+                    flex-shrink: 0;
+                    border-radius: 10px;
+                    @include md{
+                        width: 60px;
+                        height: 60px;
+                    }
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                .prod-details{
+                    overflow: hidden;
+                    .name{
+                        padding:2px;
+                        font-family: 'lobster';
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        font-size: 16px;line-height: 1;
+                        margin-bottom: 10px;font-weight: 600;
+                        display: block;
+                    }
+                    .desc{
+                        font-family: 'dancing script';
+                        padding: 2px;
+                        font-size: 15px;
+                        font-weight: 700;
+                        line-height: 1;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        color: rgba($color: #000000, $alpha: 0.5);
+
+                    }
+                }
+            }
+        }
+    }
+}
+@keyframes slideSearchWindow{
+    0% {transform: translateY(100%);}
+    100% {transform: translateY(0);}
+}

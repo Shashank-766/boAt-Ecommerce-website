@@ -1,0 +1,117 @@
+@import "../../css-config/mixins.scss";
+
+.main-header{
+
+    width: 100%;
+    padding: 0 20px;
+    background-color: #1f0022;
+    color: white;
+    border-bottom:1px solid rgba(0, 0,0, 0.1) ;
+    z-index: 99;
+    @include md {
+        padding: 0 40px;
+
+    }
+    .header-content{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 50px;
+        max-width: 1200px;
+        margin: 0 auto;
+        @include md{
+            height:80px;
+        }
+        .left{
+            display: none;
+            list-style: none;
+            gap: 18px;
+            @include md{
+                display:flex ;
+            }
+            li{
+                font-size: 18px;
+                font-weight: 600;
+                text-transform: uppercase;
+                cursor: pointer;
+                padding: 5px;
+                &:hover{
+                    background-color: rgba(255, 255,255, 0.1);
+                    border-radius: 10px;
+                }
+            }
+        }
+        .center{
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            .logo{
+                width: 19px;
+                margin-right: 5px;
+                @include md{width: 32px;
+                &:hover{
+                    transform: scale(1.2);
+
+                }
+                }
+
+            }
+            @include md{
+                font-size: 34px;
+                line-height: 50px;
+                margin-left: 20px;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        .right{
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            line-height: 10px;
+            @include md{gap: 24px;}
+            svg{
+                font-size: 19px;
+                cursor: pointer;
+                @include md{font-size: 24px;}
+                padding: 2px;
+                &:hover{
+                    background-color: rgba(255, 255,255, 0.3);
+                    border-radius: 10px;
+                }
+            }
+            .cart-icon{
+                position: relative;
+                span{
+                    min-width: 20px;
+                    text-align: center;
+                    background-color: #d80079;
+                    padding: 2.5px;
+                    position: absolute;
+                    top: -5px;
+                    right: -12px;
+                    font-size:12px;
+                    line-height:1;
+                    border-radius: 10px;
+                    
+                }
+            }
+        }
+    }
+    &.sticky-header{
+        position: sticky;
+        top:0;
+        transform:translateY(-80px);
+        animation: stickyheader 0.6s ease forwards;
+    }
+}
+
+
+
+@keyframes stickyheader {
+    0% {transform:translateY(-80px);}
+    100% {transform: translateY(0);}
+
+}
+    

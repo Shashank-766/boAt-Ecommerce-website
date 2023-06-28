@@ -1,0 +1,167 @@
+@import "../../css-config/mixins.scss";
+
+.cart-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 99;
+
+    .opac-layer {
+        background-color: rgba($color: #000000, $alpha: 0.5);
+        background: transparentize($color: #000000, $amount: 0.8);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .cart-content {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background: white;
+        display: flex;
+        flex-direction: column;
+        transform: translateX(100%);
+        animation: slideCartWindow 0.8s ease forwards;
+
+        @include md {
+            width: 340px;
+        }
+
+        .cart-header {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 20px 15px;
+            border-bottom: 3px solid rgba($color: #000000, $alpha: 0.5);
+            font-family: 'lobster';
+
+            .heading {
+                flex-grow: 1;
+                margin-bottom: 0;
+                font-size: 20px;
+                font-weight: 700;
+                text-transform: uppercase;
+            }
+
+            .close-btn {
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: center;
+                gap: 5px;
+                cursor: pointer;
+
+                svg {
+                    font-size: 18px;
+                }
+
+                .text {
+                    text-transform: uppercase;
+                    font-size: 14px;
+                }
+
+                &:hover {
+                    opacity: 0.5;
+                }
+            }
+        }
+
+        .empty-cart {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin-top: 100px;
+
+            svg {
+                font-size: 120px;
+                opacity: 0.4;
+            }
+
+            span {
+                font-family: 'dancing script';
+                font-weight: 900;
+                font-size: 19px;
+            }
+
+            .return-cta {
+                font-family: inherit;
+                outline: 0;
+                border: 0;
+                height: 40px;
+                width: 150px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                font-size: 14px;
+                color: white;
+                background: linear-gradient(to right, #c31432, #240b36);
+                border-bottom: 2px solid #b21332;
+                border-radius: 5px;
+            }
+        }
+        .cart-footer{
+            border-top: 1px solid rgba($color: #000000, $alpha: 0.1);
+            display: flex;
+            flex-direction: column;
+            
+            .subtotal{
+                padding: 20px 15px;
+                border-bottom: 1px solid rgba($color: #000000, $alpha: 0.1);
+                display: flex;
+                justify-content: space-between;
+                .text{
+                    margin-bottom: 0;
+                    font-size: 20px;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    font-family: 'lobster';
+                    &.total{
+                        color:#b21332;
+                        font-family: 'dancing script';
+                    }
+                }
+            }
+            .button{
+                padding: 20px 15px;
+                .checkout-cta{
+                    font-family: inherit;
+                outline: 0;
+                border: 0;
+                height: 50px;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                font-size: 22px;
+                color: white;
+                background: linear-gradient(to right, #c31432, #240b36);
+                border-bottom: 2px solid #b21332;
+                border-radius: 5px;
+                }
+            }
+        }
+
+    }
+}
+
+
+
+@keyframes slideCartWindow {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}

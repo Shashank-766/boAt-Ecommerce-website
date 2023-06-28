@@ -1,0 +1,61 @@
+@import "../../../css-config/mixins.scss";
+.product-card{
+    width: calc(50% - 5px);
+    margin-bottom: 20px;
+    @include md{
+        width: calc(25% - 15px);
+    }
+    .thumbnail{
+        width: 100%;
+        height: 180px;
+        background-color: rgba($color: #000000, $alpha: 0.1);
+        margin-bottom: 10px;
+        padding: 25px;
+        display: flex;
+        align-items: center;
+        border-radius: 20px;
+        @include md{
+            height: 350px;
+            border-radius: 50px;
+        }
+
+        img{
+            transition: all ease 0.4s;
+            display: block;
+            width: 100%;
+            
+        }
+    }
+    .prod-details{
+        
+        .name{
+            font-family: 'lobster';
+            font-size: 14px;
+            display: block;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            padding:0 10px;
+            @include md{
+                font-size: 17px;
+                margin-bottom: 10px;
+            }
+        }
+        .price{
+            padding: 0px 10px;
+            font-size: 18px;
+            font-weight: 900;
+            font-family: 'lobster';
+            @include md{
+                font-size: 24px;
+            }
+        }
+    }
+    &:hover{
+        .thumbnail{
+            img{
+                transform: scale(1.2);
+            }
+        }
+    }
+}

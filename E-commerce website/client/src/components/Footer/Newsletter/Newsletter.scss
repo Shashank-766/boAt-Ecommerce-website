@@ -1,0 +1,130 @@
+@import "../../../css-config/mixins.scss";
+
+.newsletter-section {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    background: #f9f9f9 url("../../../assets/newsletter-bg.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .newsletter-content {
+        width: fit-content;
+        display: flex;
+        flex-direction: column;
+        // justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        text-align: center;
+
+
+
+        .small-text {
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            color: rgba($color: #000000, $alpha: 0.5);
+            @include md{
+                font-size: 28px;
+                margin-bottom: 25px;
+            }
+        }
+
+        .big-text {
+            margin-bottom: 20px;
+            font-size: 22px;
+            line-height: 30px;
+            font-weight: 600;
+            text-transform: uppercase;
+            padding: 0 30px;
+
+            @include md {
+                font-size: 40px;
+                margin-bottom: 30px;
+            }
+        }
+
+        .form {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 10px;
+            @include md{
+                gap: 25px;
+                margin-bottom: 15px;
+            }
+            input {
+                width: 200px;
+                height: 40px;
+                border-radius: 5px;
+                border: 1px solid rgba($color: #000000, $alpha: 0.2);
+                padding: 0 12px;
+                font-size: 16px;
+                outline: none;
+                text-align: center;
+
+                @include md {
+                    width: 350px;
+                }
+            }
+
+            button {
+                outline: none;
+                border: 0;
+                border-radius: 5px;
+                height: 40px;
+                width: 100px;
+                cursor: pointer;
+                font: 16px;
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: linear-gradient(to right, #c31432, #240b36);
+                border-bottom: 2px solid #b21332;
+                border-radius: 5px;
+                @include md {
+                    width: 150px;
+                }
+            }
+
+        }
+        .text{
+            margin-bottom: 20px;
+            a{
+                font-size: 14px;
+                color: rgba($color: #000000, $alpha: 0.5);
+                text-decoration: none;
+            }
+        }
+        .social-icon{
+            display: flex;
+            gap:15px;
+            @include md{
+                gap: 35px;
+            }
+            .icon{
+                width: 40px;
+                height: 40px;
+                background-color: rgba($color: #000000, $alpha: 0.8);
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                @include md{
+                    width: 60px;
+                    height: 60px;
+                    
+                }
+                svg{
+                    font-size: 18;
+                    @include md{
+                        font-size: 30px;
+                    }
+                }
+            }
+        }
+    }
+
+}

@@ -1,0 +1,107 @@
+@import "../../../css-config/mixins.scss";
+.cart-products{
+    flex-grow: 1;
+    overflow-y: scroll;
+    .cart-product{
+        padding: 15px 15px;
+        display: flex;
+        gap: 10px;
+        .img-container{
+            background-color: rgba($color: #000000, $alpha: 0.2);
+            width: 80px;
+            height: 80px;
+            flex-shrink: 0;
+            border-radius: 5px;
+            @include md{
+                width: 125px;
+                height: 105px;
+            }
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .prod-details{
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            @include md{
+                width: 56%;
+
+                padding: 5px 0;
+            }
+            
+            .name{
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+                font-size: 16px;
+                line-height: 1;
+                margin-bottom: 10px;
+                font-weight: 700;
+                display: block;
+                padding-right: 25px;
+                font-family:'dancing script';
+                
+            }
+            .text{
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                font-size: 12px;
+                font-weight: 600;
+                .highlight{
+                    color: #b21332;
+                }
+            }
+            svg{
+                position: absolute;
+                font-size: 17px;
+                top: 6px;
+                right: 0;
+                cursor: pointer;
+            }
+            .quantity-buttons{
+                width: fit-content;
+                display: flex;
+                border: 1px solid rgba($color: #000000, $alpha: 0.2);
+                height: 30px;
+                margin-bottom: 8px;
+                span{
+                    font-family: inherit;
+                    outline: 0;
+                    border: 0;
+                    font-size: 14px;
+                    width: 30px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    color: #6b6b6b;
+                    &:nth-child(1){
+                        font-size: 18px;
+                        border-right: 1px solid rgba($color: #000000, $alpha: 0.2);
+
+                    }
+                    &:nth-child(2){
+                        width: 40px;
+
+                    }
+                    &:nth-child(3){
+                        font-size: 18px;
+                        border-left: 1px solid rgba($color: #000000, $alpha: 0.2);
+
+                    }
+                }
+            }
+            
+        }
+        &:hover{
+            background-color: rgba($color: #000000, $alpha: 0.05);
+        }
+    }
+
+}
